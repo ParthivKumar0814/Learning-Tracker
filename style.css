@@ -110,3 +110,19 @@ footer a {
   font-weight: bold;
   transition: width 0.3s ease-in-out;
 }
+
+.nav-buttons a, .back-link {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #2575fc;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.nav-buttons a:hover, .back-link:hover {
+  background-color: #e0e0e0;
+}
