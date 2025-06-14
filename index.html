@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Learning Tracker - Assignment 3</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="main-container"></div>
 
   <script>
-    const app = document.getElementById("app");
-
     const habits = [
       { title: "Daily Reading", progress: 75 },
       { title: "Online Course", progress: 50 },
       { title: "Practice Coding", progress: 90 },
     ];
 
+    const main = document.getElementById("main-container");
+
     function renderLogin() {
-      app.innerHTML = \`
+      main.innerHTML = `
         <div class="login-container">
           <div class="login-box">
             <h2>Login to Your Tracker</h2>
@@ -27,17 +27,21 @@
               <input type="password" id="password" placeholder="Enter password" required />
               <button type="submit">Login</button>
             </form>
+            <p class="note">No account? Registration coming soon!</p>
           </div>
           <footer><p>© 2025 Learning Habit Tracker</p></footer>
         </div>
-      \`;
+      `;
 
       document.getElementById("loginForm").addEventListener("submit", function (e) {
         e.preventDefault();
         const username = document.getElementById("username").value.trim();
-        if (username) {
+        const password = document.getElementById("password").value.trim();
+        if (username && password) {
           localStorage.setItem("username", username);
           renderDashboard();
+        } else {
+          alert("Please enter username and password.");
         }
       });
     }
@@ -45,31 +49,29 @@
     function renderDashboard() {
       const username = localStorage.getItem("username") || "Learner";
 
-      let habitsHTML = habits
-        .map(
-          (habit) => \`
-            <div class="habit">
-              <h2>\${habit.title}</h2>
-              <div class="progress-bar">
-                <div class="progress" style="width: \${habit.progress}%">\${habit.progress}%</div>
-              </div>
-            </div>
-          \`
-        )
-        .join("");
+      let habitsHTML = habits.map(habit => `
+        <div class="habit">
+          <h2>${habit.title}</h2>
+          <div class="progress-bar">
+            <div class="progress" style="width: ${habit.progress}%">${habit.progress}%</div>
+          </div>
+        </div>
+      `).join("");
 
-      app.innerHTML = \`
+      main.innerHTML = `
         <div class="dashboard-container">
-          <h1>Welcome, \${username}!</h1>
-          \${habitsHTML}
+          <h1>Welcome, ${username}!</h1>
+          ${habitsHTML}
           <nav class="nav-buttons">
             <a href="#">View History (soon)</a>
             <a href="#">Settings (soon)</a>
           </nav>
           <footer><p>© 2025 Learning Habit Tracker</p></footer>
         </div>
-      \`;
+      `;
     }
+
+    // On load
     if (localStorage.getItem("username")) {
       renderDashboard();
     } else {
