@@ -2,87 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learning Tracker - Assignment 3</title>
+  <title>Learning Tracker - Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="main-container"></div>
-
-  <script>
-    const habits = [
-      { title: "Daily Reading", progress: 75 },
-      { title: "Online Course", progress: 50 },
-      { title: "Practice Coding", progress: 90 },
-    ];
-
-    const main = document.getElementById("main-container");
-
-    function renderLogin() {
-      main.innerHTML = `
-        <div class="login-container">
-          <div class="login-box">
-            <h2>Login to Your Tracker</h2>
-            <form id="loginForm">
-              <input type="text" id="username" placeholder="Enter username" required />
-              <input type="password" id="password" placeholder="Enter password" required />
-              <button type="submit">Login</button>
-            </form>
-            <p class="note">No account? Registration coming soon!</p>
-          </div>
-          <footer><p>© 2025 Learning Habit Tracker</p></footer>
-        </div>
-      `;
-
-      document.getElementById("loginForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const username = document.getElementById("username").value.trim();
-        const password = document.getElementById("password").value.trim();
-        if (username && password) {
-          localStorage.setItem("username", username);
-          renderDashboard();
-        } else {
-          alert("Please enter both fields.");
-        }
-      });
-    }
-
-    function renderDashboard() {
-      const username = localStorage.getItem("username");
-
-      let habitsHTML = habits.map(habit => `
-        <div class="habit">
-          <h2>${habit.title}</h2>
-          <div class="progress-bar">
-            <div class="progress" style="width: ${habit.progress}%">${habit.progress}%</div>
-          </div>
-        </div>
-      `).join("");
-
-      main.innerHTML = `
-        <div class="dashboard-container">
-          <h1>Welcome, ${username}!</h1>
-          ${habitsHTML}
-          <nav class="nav-buttons">
-            <a href="#">View History (soon)</a>
-            <a href="#">Settings (soon)</a>
-            <a href="#" id="logoutBtn">Logout</a>
-          </nav>
-          <footer><p>© 2025 Learning Habit Tracker</p></footer>
-        </div>
-      `;
-
-      document.getElementById("logoutBtn").addEventListener("click", function () {
-        localStorage.removeItem("username");
-        renderLogin();
-      });
-    }
-
-    // Auto-load correct screen
-    if (localStorage.getItem("username")) {
-      renderDashboard();
-    } else {
-      renderLogin();
-    }
-  </script>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login to Your Tracker</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Enter username" required>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p class="note">Don’t have an account? <a href="register.html">Register</a></p>
+    </div>
+    <footer><p>© 2025 Learning Habit Tracker</p></footer>
+  </div>
+  <script src="login.js"></script>
 </body>
 </html>
