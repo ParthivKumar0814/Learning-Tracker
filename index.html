@@ -41,13 +41,13 @@
           localStorage.setItem("username", username);
           renderDashboard();
         } else {
-          alert("Please enter username and password.");
+          alert("Please enter both fields.");
         }
       });
     }
 
     function renderDashboard() {
-      const username = localStorage.getItem("username") || "Learner";
+      const username = localStorage.getItem("username");
 
       let habitsHTML = habits.map(habit => `
         <div class="habit">
@@ -65,13 +65,19 @@
           <nav class="nav-buttons">
             <a href="#">View History (soon)</a>
             <a href="#">Settings (soon)</a>
+            <a href="#" id="logoutBtn">Logout</a>
           </nav>
           <footer><p>© 2025 Learning Habit Tracker</p></footer>
         </div>
       `;
+
+      document.getElementById("logoutBtn").addEventListener("click", function () {
+        localStorage.removeItem("username");
+        renderLogin();
+      });
     }
 
-    // On load
+    // Auto-load correct screen
     if (localStorage.getItem("username")) {
       renderDashboard();
     } else {
