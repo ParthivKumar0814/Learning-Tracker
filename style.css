@@ -1,128 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-}
-
-.login-container, .dashboard-container {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
-}
-
-.login-box h2, .dashboard-container h1 {
-  margin-bottom: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  margin: 12px 0;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  font-size: 14px;
-}
-
-input::placeholder {
-  color: #ddd;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: linear-gradient(to right, #92fe9d, #00c9ff);
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  opacity: 0.85;
-}
-
-.note {
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-.note a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-footer {
-  margin-top: 20px;
-  font-size: 12px;
-  color: white;
-}
-
-footer a {
-  color: white;
-  text-decoration: underline;
-}
-
-.habit {
-  margin-bottom: 30px;
-}
-
-.habit h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.progress-bar {
-  background: #ffffff50;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 25px;
-}
-
-.progress {
-  background: linear-gradient(to right, #00c9ff, #92fe9d);
-  height: 100%;
-  color: white;
-  text-align: center;
-  line-height: 25px;
-  font-weight: bold;
-  transition: width 0.3s ease-in-out;
-}
-
-.nav-buttons a, .back-link {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #2575fc;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-.nav-buttons a:hover, .back-link:hover {
-  background-color: #e0e0e0;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(135deg,#6a11cb,#2575fc);min-height:100vh;display:flex;justify-content:center;align-items:center;color:#fff;}
+.login-container,.dashboard-container{background:rgba(255,255,255,0.1);backdrop-filter:blur(12px);border-radius:20px;padding:40px;box-shadow:0 8px 32px rgba(0,0,0,0.25);text-align:center;width:90%;max-width:400px;}
+.login-box h2,.dashboard-container h1{margin-bottom:20px;}
+input{width:100%;padding:12px;margin:12px 0;border:none;border-radius:8px;background:rgba(255,255,255,0.2);color:#fff;font-size:14px;}
+input::placeholder{color:#ddd;}
+button{width:100%;padding:12px;margin-top:15px;background:linear-gradient(to right,#92fe9d,#00c9ff);border:none;border-radius:10px;font-weight:bold;color:#333;cursor:pointer;transition:0.3s;}
+button:hover{opacity:0.85;}
+.note{margin-top:15px;font-size:13px;}
+.note a{color:#ffffff;text-decoration:underline;}
+footer{margin-top:20px;font-size:12px;color:white;}
+.back-link,a.nav-buttons a{display:inline-block;margin:10px;padding:10px 20px;background-color:#fff;color:#2575fc;text-decoration:none;border-radius:8px;transition:0.2s;}
+.back-link:hover,a.nav-buttons a:hover{background-color:#e0e0e0;}
+.habit{margin-bottom:30px;}
+.habit h2{font-size:18px;margin-bottom:10px;color:#fff;}
+.progress-bar{background:#ffffff50;border-radius:10px;overflow:hidden;height:25px;}
+.progress{background:linear-gradient(to right,#00c9ff,#92fe9d);height:100%;color:white;text-align:center;line-height:25px;font-weight:bold;transition:width .3s ease-in-out;}
