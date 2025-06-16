@@ -9,41 +9,20 @@
   <div class="dashboard-container">
     <h1>Welcome, <span id="displayUsername"></span>!</h1>
 
-    <div class="habit">
-      <h2>Daily Reading</h2>
-      <div class="progress-bar">
-        <div class="progress" style="width: 75%">75%</div>
-      </div>
-    </div>
-
-    <div class="habit">
-      <h2>Online Course</h2>
-      <div class="progress-bar">
-        <div class="progress" style="width: 50%">50%</div>
-      </div>
-    </div>
-
-    <div class="habit">
-      <h2>Practice Coding</h2>
-      <div class="progress-bar">
-        <div class="progress" style="width: 90%">90%</div>
-      </div>
-    </div>
+    <div class="habit"><h2>Daily Reading</h2><div class="progress-bar"><div class="progress" style="width:75%">75%</div></div></div>
+    <div class="habit"><h2>Online Course</h2><div class="progress-bar"><div class="progress" style="width:50%">50%</div></div></div>
+    <div class="habit"><h2>Practice Coding</h2><div class="progress-bar"><div class="progress" style="width:90%">90%</div></div></div>
 
     <nav class="nav-buttons">
       <a href="history.html">View History</a>
       <a href="settings.html">Settings</a>
-      <a href="ai-assistant.html">Ask AI Assistant</a> <!-- ✅ New link added -->
+      <a href="ai-assistant.html">Ask AI Assistant</a>
     </nav>
-
-    <footer>
-      <p>© 2025 Learning Habit Tracker</p>
-    </footer>
+    <footer><p>© 2025 Learning Habit Tracker</p></footer>
   </div>
-
   <script>
-    document.getElementById("displayUsername").textContent =
-      localStorage.getItem("username") || "Learner";
+    document.getElementById("displayUsername").textContent = localStorage.getItem("username") || "Learner";
   </script>
 </body>
 </html>
+
