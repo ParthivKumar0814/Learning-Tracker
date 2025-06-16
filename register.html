@@ -16,16 +16,19 @@
       </form>
       <p class="note">Already have an account? <a href="index.html">Login</a></p>
     </div>
-    <footer>
-      <p>© 2025 Learning Habit Tracker</p>
-    </footer>
+    <footer><p>© 2025 Learning Habit Tracker</p></footer>
   </div>
   <script>
     document.getElementById("registerForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const username = document.getElementById("reg-username").value.trim();
-      localStorage.setItem("username", username);
-      window.location.href = "dashboard.html";
+      const password = document.getElementById("reg-password").value.trim();
+      if (username && password) {
+        localStorage.setItem("username", username);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Please fill in both fields.");
+      }
     });
   </script>
 </body>
