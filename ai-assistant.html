@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>AI Assistant - Learning Tracker</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<head><meta charset="UTF-8"><title>AI Assistant - Learning Habit Tracker</title><link rel="stylesheet" href="style.css"></head>
 <body>
   <div class="dashboard-container">
     <h1>Ask AI Assistant</h1>
-    <form id="chatForm">
-      <input type="text" id="question" placeholder="Ask something..." required />
-      <button type="submit">Ask AI</button>
-    </form>
-
-    <div class="habit" style="margin-top: 30px;">
+    <form id="chatForm"><input type="text" id="question" placeholder="Ask something..." required><button type="submit">Ask AI</button></form>
+    <div class="habit" style="margin-top:30px;">
       <h2>AI Response:</h2>
-      <div class="progress-bar" style="padding: 15px; background: #ffffff20;">
-        <p id="response" style="color: white;">Waiting for your question...</p>
-      </div>
+      <div class="progress-bar" style="padding:15px; background:#ffffff20;"><p id="response" style="color:white;">Waiting for your question...</p></div>
     </div>
-
-    <nav class="nav-buttons">
-      <a href="dashboard.html">← Back to Dashboard</a>
-    </nav>
+    <nav class="nav-buttons"><a href="dashboard.html">← Back to Dashboard</a></nav>
     <footer><p>© 2025 Learning Habit Tracker</p></footer>
   </div>
-
   <script src="chat.js"></script>
 </body>
 </html>
