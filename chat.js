@@ -5,7 +5,6 @@ form.addEventListener("submit", async function (e) {
   e.preventDefault();
   const question = document.getElementById("question").value.trim();
   if (!question) return;
-
   responseBox.textContent = "Thinking...";
 
   try {
@@ -13,18 +12,17 @@ form.addEventListener("submit", async function (e) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // ← Replace with your key
+        Authorization: "Bearer sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // replace with your OpenAI key
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: question }],
       }),
     });
-
     const data = await res.json();
-    const reply = data.choices?.[0]?.message?.content;
-    responseBox.textContent = reply || "No reply received.";
+    responseBox.textContent = data.choices?.[0]?.message?.content || "No reply received.";
   } catch (err) {
     responseBox.textContent = "Error: " + err.message;
   }
 });
+
